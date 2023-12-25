@@ -1,6 +1,6 @@
-import Image from 'next/image';
 import Button from '@/app/components/ui/Button';
 import Switcher from '@/app/components/ui/Switcher';
+import DopDown from '@/app/components/ui/DopDown';
 
 export default function Home() {
   return (
@@ -9,6 +9,7 @@ export default function Home() {
       <Button appearance={'ghost'}>Transfer</Button>
       <Button appearance={'transparent'}>Transfer</Button>
       <Switcher />
+      <DopDown />
     </div>
   );
 }
