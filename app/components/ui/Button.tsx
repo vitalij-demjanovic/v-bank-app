@@ -13,8 +13,8 @@ export default function Button({
 }: ButtonProps) {
   return (
     <button
-      className={clsx('rounded-3xl py-5', className, {
-        'bg-primary duration-300 ease-in-out hover:bg-light-grey hover:text-primary':
+      className={clsx('rounded-3xl py-3', className, {
+        'border bg-primary duration-300 ease-in-out hover:border-primary hover:bg-light-grey hover:text-primary':
           appearance == 'primary',
         'bg-light-grey text-primary duration-300 ease-in-out hover:bg-primary hover:text-white':
           appearance == 'ghost',
