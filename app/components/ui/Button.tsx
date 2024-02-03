@@ -14,7 +14,7 @@ export default function Button({
   return (
     <button
       className={clsx('rounded-3xl py-3', className, {
-        'border bg-primary duration-300 ease-in-out hover:border-primary hover:bg-light-grey hover:text-primary':
+        'border bg-primary text-white duration-300 ease-in-out hover:border-primary hover:bg-light-grey hover:text-primary':
           appearance == 'primary',
         'bg-light-grey text-primary duration-300 ease-in-out hover:bg-primary hover:text-white':
           appearance == 'ghost',
