@@ -32,7 +32,7 @@ export default function SideBar() {
         </li>
         <li className='mb-[24px] flex items-center text-primary-text duration-300 ease-in-out hover:text-dark-grey'>
           <ArrowsRightLeftIcon className='mr-3 h-[30px] w-[30px]' />
-          <Link href={'/transaction'}>Transaction</Link>
+          <Link href={'/transactions'}>Transactions</Link>
         </li>
         <li className='flex items-center text-primary-text duration-300 ease-in-out hover:text-dark-grey'>
           <Cog8ToothIcon className='mr-3 h-[30px] w-[30px]' />

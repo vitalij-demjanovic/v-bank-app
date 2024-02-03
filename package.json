@@ -15,6 +15,7 @@
     "clsx": "^2.0.0",
     "cookies-next": "^4.1.1",
     "creditcards": "^4.2.0",
+    "date-fns": "^3.3.1",
     "next": "14.0.4",
     "next-auth": "^4.24.5",
     "react": "^18",

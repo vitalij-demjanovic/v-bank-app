@@ -7,14 +7,13 @@ import UserIcon from '@heroicons/react/24/outline/UserIcon';
 import MagnifyingGlassIcon from '@heroicons/react/24/outline/MagnifyingGlassIcon';
 import LogOut from '@heroicons/react/24/outline/ArrowLeftStartOnRectangleIcon';
 import Link from 'next/link';
-import { useCookies } from 'react-cookie';
 import { useRouter } from 'next/navigation';
+import { deleteToken } from '@/lib/auth/auth';
 
 export default function Header() {
-  const [cookie, setCookie, removeCookie] = useCookies(['token']);
   const router = useRouter();
-  const logOut = () => {
-    removeCookie('token');
+  const logOut = async () => {
+    await deleteToken();
     router.push('/authentication');
   };
 

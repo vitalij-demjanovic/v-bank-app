@@ -20,3 +20,7 @@ export const login = async (data: any) => {
       throw new Error(err);
     });
 };
+
+export const deleteToken = async () => {
+  cookies().delete('token');
+};

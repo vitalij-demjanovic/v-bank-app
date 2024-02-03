@@ -18,7 +18,7 @@ export default function Button({
           appearance == 'primary',
         'bg-light-grey text-primary duration-300 ease-in-out hover:bg-primary hover:text-white':
           appearance == 'ghost',
-        'border border-dark-grey text-primary duration-300 ease-in-out hover:border-primary hover:bg-primary hover:text-white':
+        'border border-primary text-primary duration-300 ease-in-out hover:border-primary hover:bg-primary hover:text-white':
           appearance == 'transparent'
       })}
     >

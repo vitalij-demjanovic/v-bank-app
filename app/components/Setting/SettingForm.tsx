@@ -40,7 +40,7 @@ export default function SettingForm() {
 
   return (
     <div className='rounded-2xl bg-white p-10'>
-      <h2 className='mb-10 text-2xl'>Account</h2>
+      <h2 className='mb-10 text-2xl font-bold'>Account</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className='flex justify-between'>
           <div className='mr-5 w-full'>
