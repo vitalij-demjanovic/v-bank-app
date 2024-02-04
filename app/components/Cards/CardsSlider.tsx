@@ -1,6 +1,5 @@
 'use client';
 import Card from '@/app/components/Cards/Card';
-import { cards } from '@/content/cards-slider';
 import { Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -10,7 +9,23 @@ import { useState } from 'react';
 import CardInformation from '@/app/components/Cards/CardInformation';
 import CardMovements from '@/app/components/Cards/CardMovements';
 
-export default function CardsSlider() {
+type Card = {
+  balance: number;
+  cardNumber: string;
+  validMonth: string;
+  validYear: string;
+  cardName: string;
+  bankName: string;
+  id: number;
+  cardHolderName: string;
+  cards: [];
+};
+
+type Cards = {
+  cards: Card[];
+};
+
+export default function CardsSlider({ cards }: Cards) {
   const [slideId, setSlideId] = useState(0);
 
   const handleSlideChange = (swiper: any) => {
@@ -33,14 +48,15 @@ export default function CardsSlider() {
           modules={[Pagination]}
           className='mySwiper'
         >
-          {cards.map(cardUser => (
-            <SwiperSlide key={cardUser.id}>
+          {cards.map((cardUser, index) => (
+            <SwiperSlide key={index}>
               <Card
                 balance={cardUser.balance}
                 cardNumber={cardUser.cardNumber}
-                cardHolder={cardUser.cardHolder}
-                expired={cardUser.expired}
-                variant={cardUser.variant}
+                cardHolder={cardUser.cardHolderName}
+                expiredMonth={cardUser.validMonth}
+                expiredYear={cardUser.validYear}
+                variant={'#6160DC'}
               />
             </SwiperSlide>
           ))}
@@ -49,11 +65,12 @@ export default function CardsSlider() {
       <div className='pl-16'>
         <CardMovements />
         <CardInformation
-          cardNumber={cards[slideId].cardNumber}
-          cardHolder={cards[slideId].cardHolder}
-          expired={cards[slideId].expired}
-          cardName={cards[slideId].cardName}
-          bank={cards[slideId].bank}
+          cardNumber={cards[slideId]?.cardNumber}
+          cardHolder={cards[slideId]?.cardHolderName}
+          expiredMonth={cards[slideId]?.validMonth}
+          expiredYear={cards[slideId]?.validYear}
+          cardName={cards[slideId]?.cardName}
+          bank={cards[slideId]?.bankName}
         />
       </div>
     </div>

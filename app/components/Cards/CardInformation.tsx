@@ -1,13 +1,15 @@
 export default function CardInformation({
   cardHolder,
   cardNumber,
-  expired,
+  expiredMonth,
+  expiredYear,
   cardName,
   bank
 }: {
   cardHolder: string;
   cardNumber: string;
-  expired: string;
+  expiredMonth: string;
+  expiredYear: string;
   cardName: string;
   bank: string;
 }) {
@@ -33,7 +35,9 @@ export default function CardInformation({
         </div>
         <div className='mr-10'>
           <span className='text-xs font-light'>Valid Thru</span>
-          <p className='font-bold'>{expired}</p>
+          <p className='font-bold'>
+            {expiredMonth}/{expiredYear}
+          </p>
         </div>
       </div>
     </div>

@@ -2,7 +2,8 @@ export default function Card({
   balance,
   cardNumber,
   cardHolder,
-  expired,
+  expiredMonth,
+  expiredYear,
   variant
 }: CardI) {
   return (
@@ -20,7 +21,9 @@ export default function Card({
         </div>
         <div>
           <span className='text-xs font-light'>Valid Thru</span>
-          <p className='font-bold'>{expired}</p>
+          <p className='font-bold'>
+            {expiredMonth}/{expiredYear}
+          </p>
         </div>
       </div>
     </div>
